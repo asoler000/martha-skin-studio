@@ -219,6 +219,7 @@
       button.textContent = toSpanish ? "EN" : "ES";
       button.title = toSpanish ? "English" : "Español";
     });
+    document.querySelector(".back-to-top")?.setAttribute("aria-label", toSpanish ? "Volver arriba" : "Back to top");
   };
 
   document.documentElement.dataset.englishTitle = document.title;
@@ -242,6 +243,25 @@
     languageButton.addEventListener("click", changeLanguage);
     mobileLanguageButton.addEventListener("click", changeLanguage);
   }
+
+  const backToTop = document.createElement("button");
+  backToTop.className = "back-to-top";
+  backToTop.type = "button";
+  backToTop.setAttribute("aria-label", document.documentElement.lang === "es" ? "Volver arriba" : "Back to top");
+  backToTop.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg>';
+  document.body.append(backToTop);
+
+  const updateBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
+  };
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
+  updateBackToTop();
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  });
 
   const form = document.querySelector("#inquiry-form");
   if (form) {
