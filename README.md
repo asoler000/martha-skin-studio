@@ -5,7 +5,7 @@ A static, responsive website built with semantic HTML, one CSS file, and one Jav
 ## Required before launch
 
 - The ZIP code has been verified as `11746` and is used consistently throughout the site.
-- Add the approved logo at `assets/martha-skin-studio-logo.svg`.
+- The approved horizontal logo is included at `assets/martha-skin-studio-logo.png`.
 - Add an optimized 1200 × 900 or larger hero image at `assets/hero-skincare.jpg`.
 - Add an optimized 800 × 1000 or larger portrait at `assets/martha-portrait.jpg`.
 - Replace every biography, training, certification, and philosophy placeholder with Martha’s verified, approved copy.
