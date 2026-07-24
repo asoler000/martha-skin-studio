@@ -98,6 +98,7 @@ address{font-style:normal}
 .contact-details h2,.form-panel h2{font-size:clamp(2.5rem,5vw,4rem)}
 .contact-details address{font-size:1.08rem;margin-bottom:1.5rem}
 .contact-details .hours{margin:2rem 0}
+.directions-link{display:inline-block;margin-left:1rem}
 .form-panel{background:var(--pale);padding:clamp(2rem,5vw,4rem)}
 .field{margin-bottom:1.25rem}
 .field label{display:block;font-size:.78rem;font-weight:600;margin-bottom:.4rem}
@@ -140,5 +141,6 @@ address{font-style:normal}
   .steps li{grid-template-columns:50px 1fr}
   .service-sections{padding:0 1.25rem}
   .form-panel{padding:1.5rem}
+  .directions-link{display:block;width:max-content;margin:1.25rem 0 0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}

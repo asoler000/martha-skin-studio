@@ -11,8 +11,8 @@ A static, responsive website built with semantic HTML, one CSS file, and one Jav
 - Add an optimized 800 × 1000 or larger portrait at `assets/martha-portrait.jpg`.
 - Replace every biography, training, certification, and philosophy placeholder with Martha’s verified, approved copy.
 - Replace the Google Maps search links with the exact verified Google Business Profile or Maps listing URL.
-- Add verified business hours.
-- Replace `mailto:` booking links with the verified external booking URL if one exists.
+- Verified hours are Tuesday–Saturday, 10:00 AM–7:00 PM; Sunday–Monday closed.
+- Booking is by telephone at 516-660-4411.
 - Review the privacy page if analytics, tracking, embedded maps, payments, online booking, or a form provider is added.
 - Confirm that the phone number, email, address, services, and business name are correct.
 - Compress images before publishing. WebP or AVIF can be added with `<picture>` while retaining the supplied JPEG fallback.
