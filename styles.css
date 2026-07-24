@@ -22,6 +22,8 @@ h3{font-size:1rem;line-height:1.35}
 .site-nav{grid-area:nav;display:flex;gap:1.8rem;align-items:center}
 .site-nav a{text-decoration:none;font-size:.84rem;font-weight:600;letter-spacing:.035em}
 .site-nav a[aria-current=page]{color:#4f687b;border-bottom:1px solid var(--blue)}
+.language-toggle{border:1px solid var(--blue);border-radius:3px;background:#fff;color:#4f687b;min-height:38px;padding:.45rem .7rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;cursor:pointer}
+.language-toggle:hover{background:var(--pale)}
 .button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.78rem 1.25rem;border:1px solid var(--blue);border-radius:3px;background:var(--blue);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.035em;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
 .button:hover{background:#536d80;border-color:#536d80}
 .header-cta{grid-area:cta;justify-self:end}
@@ -119,9 +121,10 @@ address{font-style:normal}
 @media(max-width:900px){
   .header-inner{min-height:104px;grid-template-columns:1fr auto 1fr;grid-template-areas:"menu brand cta";padding:1rem 1.25rem}
   .brand img{width:150px;height:68px}
-  .menu-toggle{grid-area:menu;display:flex;gap:.5rem;align-items:center;width:max-content;border:0;background:transparent;padding:.7rem 0;font-size:.78rem;font-weight:600}
+  .menu-toggle{grid-area:menu;display:flex;gap:.5rem;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid var(--rule);border-radius:3px;background:#fff;padding:0;font-size:1.75rem;font-weight:600;line-height:1}
   .site-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:1.5rem;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--rule)}
   .site-nav.is-open{display:flex}
+  .language-toggle{margin-top:.4rem;min-height:44px}
   .header-cta{font-size:0;padding:.65rem;min-width:46px}.header-cta::after{content:"Book";font-size:.75rem}
   .hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:5rem 2rem}.hero-media{min-height:420px}
   .section-heading.split,.about-preview,.editorial-about,.contact-layout,.service-detail{grid-template-columns:1fr}
