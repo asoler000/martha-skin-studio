@@ -9,7 +9,7 @@ A static, responsive website built with semantic HTML, one CSS file, and one Jav
 - The approved square favicon is included at `assets/favicon.png`.
 - Add an optimized 1200 × 900 or larger hero image at `assets/hero-skincare.jpg`.
 - Add an optimized 800 × 1000 or larger portrait at `assets/martha-portrait.jpg`.
-- Replace every biography, training, certification, and philosophy placeholder with Martha’s verified, approved copy.
+- Martha’s biography, philosophy, training, and professional qualifications have been verified and added.
 - Replace the Google Maps search links with the exact verified Google Business Profile or Maps listing URL.
 - Verified hours are Tuesday–Saturday, 10:00 AM–7:00 PM; Sunday–Monday closed.
 - Booking is by telephone at 516-660-4411.
