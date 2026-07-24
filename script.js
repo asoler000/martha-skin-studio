@@ -214,8 +214,11 @@
     document.title = toSpanish
       ? `${spanish[document.title.split(" | ")[0]] || document.title.split(" | ")[0]} | Martha Skin Studio`
       : document.documentElement.dataset.englishTitle;
-    document.querySelector(".language-toggle")?.setAttribute("aria-label", toSpanish ? "View website in English" : "Ver el sitio en español");
-    document.querySelector(".language-toggle").textContent = toSpanish ? "ENGLISH" : "ESPAÑOL";
+    document.querySelectorAll(".language-toggle").forEach((button) => {
+      button.setAttribute("aria-label", toSpanish ? "View website in English" : "Ver el sitio en español");
+      button.textContent = toSpanish ? "EN" : "ES";
+      button.title = toSpanish ? "English" : "Español";
+    });
   };
 
   document.documentElement.dataset.englishTitle = document.title;
@@ -224,15 +227,20 @@
     languageButton.className = "language-toggle";
     languageButton.type = "button";
     nav.append(languageButton);
+    const mobileLanguageButton = languageButton.cloneNode();
+    mobileLanguageButton.classList.add("mobile-language-toggle");
+    document.querySelector(".header-inner")?.insertBefore(mobileLanguageButton, document.querySelector(".header-cta"));
     let language = "en";
     try { language = localStorage.getItem("martha-language") || "en"; } catch (_) {}
     translatePage(language);
-    languageButton.addEventListener("click", () => {
+    const changeLanguage = () => {
       language = document.documentElement.lang === "es" ? "en" : "es";
       try { localStorage.setItem("martha-language", language); } catch (_) {}
       translatePage(language);
       closeMenu();
-    });
+    };
+    languageButton.addEventListener("click", changeLanguage);
+    mobileLanguageButton.addEventListener("click", changeLanguage);
   }
 
   const form = document.querySelector("#inquiry-form");
