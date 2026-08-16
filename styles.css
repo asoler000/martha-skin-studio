@@ -88,6 +88,7 @@ address{font-style:normal}
 .site-footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem}
 .site-footer nav a{text-decoration:none}
 .copyright{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:1rem}
+.copyright a{color:inherit;text-underline-offset:.2em}
 .page-hero{max-width:var(--max);margin:auto;padding:clamp(5rem,11vw,10rem) 2rem;border-bottom:1px solid var(--rule)}
 .page-hero h1{max-width:900px}
 .page-hero>p:last-child{max-width:var(--reading);color:var(--gray);font-size:1.1rem}
