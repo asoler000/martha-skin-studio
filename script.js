@@ -224,24 +224,44 @@
 
   document.documentElement.dataset.englishTitle = document.title;
   if (nav) {
-    const languageButton = document.createElement("button");
-    languageButton.className = "language-toggle";
-    languageButton.type = "button";
-    nav.append(languageButton);
-    const mobileLanguageButton = languageButton.cloneNode();
-    mobileLanguageButton.classList.add("mobile-language-toggle");
-    document.querySelector(".header-inner")?.insertBefore(mobileLanguageButton, document.querySelector(".header-cta"));
-    let language = "en";
-    try { language = localStorage.getItem("martha-language") || "en"; } catch (_) {}
-    translatePage(language);
-    const changeLanguage = () => {
-      language = document.documentElement.lang === "es" ? "en" : "es";
-      try { localStorage.setItem("martha-language", language); } catch (_) {}
+    const isPairedPage = document.documentElement.hasAttribute("data-language-pair");
+    if (isPairedPage) {
+      const isSpanishPage = document.documentElement.lang === "es";
+      const alternateUrl = isSpanishPage
+        ? document.documentElement.dataset.englishUrl
+        : document.documentElement.dataset.spanishUrl;
+      const languageLink = document.createElement("a");
+      languageLink.className = "language-toggle";
+      languageLink.href = alternateUrl;
+      languageLink.hreflang = isSpanishPage ? "en" : "es";
+      languageLink.lang = isSpanishPage ? "en" : "es";
+      languageLink.textContent = isSpanishPage ? "EN" : "ES";
+      languageLink.title = isSpanishPage ? "English" : "Español";
+      languageLink.setAttribute("aria-label", isSpanishPage ? "View website in English" : "Ver el sitio en español");
+      nav.append(languageLink);
+      const mobileLanguageLink = languageLink.cloneNode(true);
+      mobileLanguageLink.classList.add("mobile-language-toggle");
+      document.querySelector(".header-inner")?.insertBefore(mobileLanguageLink, document.querySelector(".header-cta"));
+    } else {
+      const languageButton = document.createElement("button");
+      languageButton.className = "language-toggle";
+      languageButton.type = "button";
+      nav.append(languageButton);
+      const mobileLanguageButton = languageButton.cloneNode();
+      mobileLanguageButton.classList.add("mobile-language-toggle");
+      document.querySelector(".header-inner")?.insertBefore(mobileLanguageButton, document.querySelector(".header-cta"));
+      let language = "en";
+      try { language = localStorage.getItem("martha-language") || "en"; } catch (_) {}
       translatePage(language);
-      closeMenu();
-    };
-    languageButton.addEventListener("click", changeLanguage);
-    mobileLanguageButton.addEventListener("click", changeLanguage);
+      const changeLanguage = () => {
+        language = document.documentElement.lang === "es" ? "en" : "es";
+        try { localStorage.setItem("martha-language", language); } catch (_) {}
+        translatePage(language);
+        closeMenu();
+      };
+      languageButton.addEventListener("click", changeLanguage);
+      mobileLanguageButton.addEventListener("click", changeLanguage);
+    }
   }
 
   const backToTop = document.createElement("button");

@@ -22,7 +22,7 @@ h3{font-size:1rem;line-height:1.35}
 .site-nav{grid-area:nav;display:flex;gap:1.8rem;align-items:center}
 .site-nav a{text-decoration:none;font-size:.84rem;font-weight:600;letter-spacing:.035em}
 .site-nav a[aria-current=page]{color:#4f687b;border-bottom:1px solid var(--blue)}
-.language-toggle{border:1px solid var(--blue);border-radius:3px;background:#fff;color:#4f687b;min-height:38px;padding:.45rem .7rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;cursor:pointer}
+.language-toggle{display:inline-flex;border:1px solid var(--blue);border-radius:3px;background:#fff;color:#4f687b;min-height:38px;padding:.45rem .7rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;cursor:pointer;text-decoration:none;align-items:center;justify-content:center}
 .language-toggle:hover{background:var(--pale)}
 .mobile-language-toggle{display:none}
 .button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.78rem 1.25rem;border:1px solid var(--blue);border-radius:3px;background:var(--blue);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.035em;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
